@@ -1,18 +1,14 @@
 package org.wikipedia.common;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.wikipedia.drivers.DriverManager;
+import io.restassured.response.Response;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.Properties;
 
 public class WikiUtils {
@@ -30,6 +26,21 @@ public class WikiUtils {
     public static void log(String msg){
         // ToDo : Implement Log4J here -
         System.out.println(now() + " *** " + msg);
+    }
+
+    /**
+     * Method to print all key-value pairs
+     * @param response
+     */
+    public static void log(Response response){
+        // ToDo : Implement Log4J here -
+        System.out.print("Response data => \n");
+        Map<String, Object> responseMap = response.jsonPath().getMap("");
+
+        // Print all the keys and values
+        for (Map.Entry<String, Object> entry : responseMap.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
     }
 
     /**

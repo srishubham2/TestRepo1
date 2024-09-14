@@ -37,6 +37,8 @@ public class DemoAPITest {
         WikiUtils.log("Response Body: " + responseBody);
 
         // Assert the values
+        softAssert.assertEquals(response.getStatusCode(), 201, "Status code is not as expected");
+        softAssert.assertNotNull(response.jsonPath().getString("id"), "Id is null.");
         softAssert.assertEquals(response.jsonPath().getString("name"), request.get("name"), "Name is incorrect!");
         softAssert.assertEquals(response.jsonPath().getString("job"), request.get("job"), "Job is incorrect!");
 
