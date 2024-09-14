@@ -6,7 +6,6 @@
 
     <test name="Setup">
         <classes>
-            <!-- @BeforeSuite, @AfterSuite method is included here -->
             <class name="org.wikipedia.drivers.DriverManager" />
         </classes>
     </test>
@@ -20,6 +19,18 @@
         <classes>
             <class
                     name="org.wikipedia.regression.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Wikipedia Login Test">
+        <groups>
+            <run>
+                <include name="regression" />
+            </run>
+        </groups>
+        <classes>
+            <class
+                    name="org.wikipedia.regression.DemoAPITest"/>
         </classes>
     </test>
 </suite>
