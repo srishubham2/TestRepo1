@@ -9,7 +9,7 @@ Navigating to the Wikipedia login page.
 Entering a valid username and password.
 Verifying that the login is successful or fails with appropriate error handling.
 
-* Note : Please check the `LoginTest.java` to check the action steps and assertion of Test Case.
+* Note : Please check the `LoginTest.java` to check the action steps and assertion of UI Test Case.
 
 
 ### Scenario 2: Post API Resource Creation and Verification = API Automation
@@ -18,6 +18,9 @@ This scenario tests the creation of a resource using a POST API request. It cove
 Sending a POST request to create a new resource : User.
 Verifying the response status code, headers, and body.
 Ensuring the response data (e.g., name, job) matches the expected values.
+
+* Note : Please check the `DemoAPITest.java` to check the action steps and assertion of API Test Case.
+
 
 ### Prerequisites
 Before running the tests, ensure the following are installed:
