@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Testing Wikipedia">
+    <parameter name="browser.properties" value="chrome.properties"/>
+    <parameter name="user.login.properties" value="jenkinsparameters.properties"/>
+
+    <test name="Setup">
+        <classes>
+            <!-- @BeforeSuite, @AfterSuite method is included here -->
+            <class name="org.wikipedia.drivers.DriverManager" />
+        </classes>
+    </test>
+
+    <test name="Wikipedia Login Test">
+        <groups>
+            <run>
+                <include name="regression" />
+            </run>
+        </groups>
+        <classes>
+            <class
+                    name="org.wikipedia.regression.LoginTest"/>
+        </classes>
+    </test>
+</suite>
