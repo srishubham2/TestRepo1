@@ -5,6 +5,7 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.wikipedia.drivers.DriverManager;
 
 import java.time.Duration;
@@ -37,5 +38,20 @@ public class CommonPage {
      */
     public WebElement buttonOnPage(String buttonLabel, int index) {
         return DriverManager.getDriver().findElement((By.xpath("//button[text()='" + buttonLabel + "']["+index+"]")));
+    }
+
+    /**
+     * Method to wait for element to be present.
+     * @param timeSeconds
+     * @param locator
+     */
+    public void waitForElementToBePresent(int timeSeconds, By locator) {
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds((long)timeSeconds));
+
+        try {
+            wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        } catch (TimeoutException var4) {
+            Assert.fail(locator + " was not present");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package org.wikipedia.regression;
 
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -36,7 +37,11 @@ public class LoginTest extends TestBase {
         loginPage.getPassword().sendKeys(TestBase.getUserDetails().getProperty("password"));
 
         // Click Log in button -
-         commonPage.buttonOnPage("Log in", 1).click();
+        commonPage.buttonOnPage("Log in", 1).click();
+
+        // Verify that, profile name to be visible at Home Page after login -
+        softAssert.assertTrue(loginPage.isUsernameVisible(5), "User Profile name is not visible.");
+        softAssert.assertAll();
         WikiUtils.log("End of TestCase - TestCases_C01...");
    }
 }

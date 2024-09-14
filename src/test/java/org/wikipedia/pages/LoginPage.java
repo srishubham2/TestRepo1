@@ -18,4 +18,9 @@ public class LoginPage {
     public WebElement getPassword() {
         return DriverManager.getDriver().findElement(By.xpath("//input[@name='wpPassword']"));
     }
+
+    public boolean isUsernameVisible(int waitForSeconds) {
+        commonPage.waitForElementToBePresent(waitForSeconds, By.xpath("//span[contains(text(),'ShubhEducates')]"));
+        return DriverManager.getDriver().findElement(By.xpath("//span[contains(text(),'ShubhEducates')]")).isDisplayed();
+    }
 }
