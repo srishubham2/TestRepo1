@@ -1,8 +1,13 @@
 # Test Automation Repository to automate 1 GUI and 1 API Scenarios
-This repository contains automated test scenarios developed using Selenium and RestAssured to test web and API functionalities. The goal is to provide robust and scalable test cases to ensure proper functionality of web elements and API resources.
+This repository contains automated test scenarios developed using Selenium and RestAssured to test web and API functionalities. The goal is to provide robust and scalable test cases to ensure proper functionality of web elements and API resources -
+
+**Goals : **
+1.	Automate any web login flow using Selenium
+2.	Automate any POST API
+
 
 ## Test Scenarios
-###Scenario 1: Wikipedia Login Test - UI Automation
+### Scenario 1: Wikipedia Login Test - UI Automation
 This scenario tests the login functionality on the Wikipedia website. It automates the following steps:
 
 Navigating to the Wikipedia login page.
@@ -30,5 +35,6 @@ Before running the tests, ensure the following are installed:
 * IDE (Eg: IntelliJ / Eclipse)
 
 
-Thanks,
+Thanks, 
+
 **Shubham Srivastav**
